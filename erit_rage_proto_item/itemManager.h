@@ -30,7 +30,50 @@ struct ItemTemplate ;
 
 };
 
-Item* itemBegin;
+{
+	unsigned char PlayerID;
+};
+
+typedef struct Item Item;
+struct Item
+{
+	char ItemID;
+};
+typedef struct Entity Entity;
+struct Entity
+{
+	Entity* nextEntity;
+	sfVector2f positionEntity;
+	union MyUnion
+	{
+		Player* player;
+		Item* item;
+	};
+};
+typedef struct Player Player;
+struct Player
+{
+	unsigned char PlayerID;
+};
+
+typedef struct Item Item;
+struct Item
+{
+	char ItemID;
+};
+typedef struct Entity Entity;
+struct Entity
+{
+	Entity* nextEntity;
+	sfVector2f positionEntity;
+	union MyUnion
+	{
+		Player* player;
+		Item* item;
+	};
+};
+Entity* firstEntity; *
+ItemData* itemBegin;
 
 
 void initItem();

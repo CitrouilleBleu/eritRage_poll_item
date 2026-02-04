@@ -1,5 +1,6 @@
 #include "tools.h"
-#include "item.h"
+#include "itemManager.h"
+#include "entityManager.h"
 
 
 

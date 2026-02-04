@@ -1,0 +1,102 @@
+Noms,lenght,height,left,top,Durabilite,rarete
+liasse billets,19,19,0,0,1,1
+dragon de jade ,25,19,1,0,3,4
+diamant ,19,17,2,0,3,3
+cle,11,21,3,0,2,2
+ankh,18,23,4,0,2,3
+fusee tintin,15,21,5,0,1,1
+ruby,13,19,6,0,2,2
+oeuf faberge ble,16,20,7,0,1,3
+oeuf faberge red,16,20,8,0,1,3
+oeuf faberge ver,16,20,9,0,1,3
+dynamite ,22,17,10,0,1,1
+bocal cerveau,20,20,11,0,1,3
+sextan,22,20,12,0,2,3
+pot egyptien ,17,23,13,0,1,2
+collier perle ,16,15,14,0,1,2
+dentier or ,19,13,15,0,2,2
+bague bleu ,19,12,16,0,2,3
+bague ruby ,17,11,17,0,2,3
+emeraude ,16,16,18,0,2,3
+lingot d'or ,20,17,19,0,3,3
+montre gousset,17,20,20,0,1,3
+lampe genie ,25,16,21,0,2,3
+perle ,13,13,22,0,1,2
+livre marron ,14,19,23,0,3,1
+livre bleu ,14,19,24,0,3,1
+piece echec 1,10,17,0,1,2,1
+pece echec 2,10,17,1,1,2,1
+piece echec 3,11,20,2,1,2,1
+piece final ,10,21,3,1,2,3
+bouteil alcool 1,8,20,4,1,1,2
+bouteil alcool 2,13,20,5,1,1,3
+fiole acide ,13,19,6,1,1,1
+bouteil alcool 3,11,20,7,1,1,2
+bouteil alcool 4,9,19,8,1,1,2
+fiole verte ,13,20,9,1,1,1
+fiole violette ,13,20,10,1,1,1
+bouteil alcool 5,12,17,11,1,1,3
+marteau métal ,18,19,12,1,3,1
+marteau or,18,19,13,1,3,2
+marteau or orne,18,19,14,1,3,3
+boule billard 1,16,15,15,1,3,1
+boule billard 2,16,15,16,1,3,1
+boule billard 3,16,15,17,1,3,1
+boule billard 4,16,15,18,1,3,1
+sabre laser ,8,23,19,1,3,4
+violon ,14,31,20,1,2,3
+oeuf bleu ,12,16,21,1,1,3
+silex ,13,23,22,1,3,1
+ocarina ,17,15,23,1,2,2
+jason masque ,19,21,24,1,2,3
+crane or ,19,19,0,2,3,3
+vase ming,16,20,1,2,1,3
+dragon ball 1,17,16,2,2,1,3
+dragon ball 2,17,16,3,2,1,3
+canard plastique ,16,18,4,2,3,1
+bouclier rouge,17,21,5,2,3,2
+chuky ,16,18,6,2,2,2
+gamboy ,12,18,7,2,2,3
+sainte grenade,15,20,8,2,2,3
+statuette ,19,24,9,2,2,1
+jouet ,20,20,10,2,2,3
+peluche ,19,22,11,2,2,2
+miroir vert ,12,20,12,2,1,1
+parfum rouge ,18,20,13,2,1,3
+poel ,20,19,14,2,3,2
+telecommande ,18,17,15,2,3,1
+statuette 2,20,19,16,2,3,1
+quille ,19,20,17,2,3,1
+potion oeil ,15,20,18,2,1,2
+crane bougie ,17,20,19,2,1,1
+miroir or,12,20,20,2,1,3
+main or,14,22,21,2,2,3
+grokachu,18,21,22,2,2,4
+couronne ,18,17,23,2,2,4
+lanterne verte ,20,20,24,2,2,2
+lanterne or,20,20,0,3,2,3
+pistolet de mami,23,17,1,3,2,3
+pistolet ,23,16,2,3,2,2
+poupée vaudou,20,20,3,3,1,2
+machette ,19,20,4,3,2,2
+ronda,16,20,5,3,2,2
+parfum violet,18,20,6,3,1,3
+parfum rose,18,20,7,3,1,3
+sac luxe,19,16,8,3,2,3
+lapin rose ,21,20,9,3,3,1
+fiole sang vierge,14,18,10,3,1,2
+symbole de paix,20,18,11,3,2,3
+champagne ,10,20,12,3,2,3
+boule bouling noi,18,19,13,3,3,1
+boule rouge,18,19,14,3,3,1
+boule grise,18,19,15,3,3,1
+bouclier gris,17,18,16,3,3,2
+pendantif ,14,19,17,3,2,2
+statuette 2 or ,20,19,18,3,3,3
+Globe oeil,16,19,19,3,2,2
+pile,15,18,20,3,3,1
+croix ,18,20,21,3,2,3
+brique mur berlin,18,18,22,3,3,1
+brique mur berlin,18,18,23,3,3,1
+livre vivant,14,19,24,3,3,2
+sablier,14,19,25,3,1,2

@@ -42,7 +42,7 @@ void ItemOnload()
 	while (fgets(tmpligne, sizeof(tmpligne), file))
 	{
 		sscanf(tmpligne, "%s,%d,%d,%d,%d,%d,%d", tmpname, &tmprect.left, &tmprect.top, &tmphitbox.x, &tmphitbox.y, &tmpdura, &tmpvalue);
-		ItemTemplate* tempItem = (ItemTemplate*)calloc(1, sizeof(ItemTemplate));
+		ItemData* tempItem = (ItemData*)calloc(1, sizeof(ItemData));
 		strcpy(tempItem->name, &tmpname);
 		tempItem->id = tmpid;
 		tempItem->iRect = tmprect;
@@ -59,9 +59,9 @@ void addItem(Item* _item)
 	_item->pNext = itemBegin;
 	itemBegin = _item;
 }
-ItemTemplate* getItemById(int _id)
+ItemData* getItemById(int _id)
 {
-	ItemTemplate* tempItem = itemBegin;
+	ItemData* tempItem = itemBegin;
 	while (tempItem != NULL)
 	{
 		if (_id == tempItem->id)

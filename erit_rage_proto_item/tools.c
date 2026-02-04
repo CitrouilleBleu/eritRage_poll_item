@@ -15,11 +15,17 @@ void restartClock()
 	sftime = sfClock_restart(sfclock);
 }
 
-float GetDeltaTime()
+float getDeltaTime()
 {
 	return sfTime_asSeconds(sftime);
 }
-
+int iRand(int _min, int _max)
+{
+	if (_max > _min)
+		return rand() % (_max - _min + 1) + _min;
+	else
+		return _min;
+}
 
 // Fonction pour gérer si la souris passe sur un élément ayant une hitbox pour position en float et retourner une valeur
 int isInsideMouse(sfVector2f item, sfFloatRect obstacle)

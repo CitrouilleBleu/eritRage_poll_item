@@ -28,6 +28,7 @@ int pressed;
 void initTools();
 void restartClock();
 float GetDeltaTime();
+int iRand(int _min, int _max);
 int isInsideMouse(sfVector2f item, sfFloatRect obstacle);
 int isInsidePlayer(sfFloatRect item, sfFloatRect obstacle);
 int isInsideMousei(sfVector2i item, sfFloatRect obstacle);

@@ -19,9 +19,10 @@ struct ItemData
 };
 
 typedef struct ItemTemplate ItemTemplate;
-struct ItemTemplate ;
+struct ItemTemplate
 {
-	ItemData item;
+	ItemTemplate* pNext;
+	ItemData* item;
 	sfBool isHold ;
 	sfIntRect iRect;
 	sfVector2f pos;
@@ -30,49 +31,7 @@ struct ItemTemplate ;
 
 };
 
-{
-	unsigned char PlayerID;
-};
 
-typedef struct Item Item;
-struct Item
-{
-	char ItemID;
-};
-typedef struct Entity Entity;
-struct Entity
-{
-	Entity* nextEntity;
-	sfVector2f positionEntity;
-	union MyUnion
-	{
-		Player* player;
-		Item* item;
-	};
-};
-typedef struct Player Player;
-struct Player
-{
-	unsigned char PlayerID;
-};
-
-typedef struct Item Item;
-struct Item
-{
-	char ItemID;
-};
-typedef struct Entity Entity;
-struct Entity
-{
-	Entity* nextEntity;
-	sfVector2f positionEntity;
-	union MyUnion
-	{
-		Player* player;
-		Item* item;
-	};
-};
-Entity* firstEntity; *
 ItemData* itemBegin;
 
 
@@ -82,7 +41,7 @@ void addItem(ItemTemplate* _item);
 sfIntRect seekItem(char _name);
 void updateItem();
 void drawItem(sfRenderWindow* _window);
-Item* deleteItem(ItemTemplate* _item);
+ItemTemplate* deleteItem(ItemTemplate* _item);
 void ItemOnload();
-ItemTemplate* getItemById(int _id);
-ItemTemplate* getItemByName(char* _name);
+ItemData* getItemById(int _id);
+ItemData* getItemByName(char* _name);

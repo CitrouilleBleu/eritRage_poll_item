@@ -17,7 +17,7 @@ void initItem()
 
 void ajouteItem(int _id, sfVector2f _itemPos, int _left, int _top)
 {
-	Item* tempItem = (Item*)calloc(1, sizeof(Item));
+	ItemTemplate* tempItem = (ItemTemplate*)calloc(1, sizeof(ItemTemplate));
 	tempItem->pos = _itemPos;
 	tempItem->iRect = (sfIntRect){ _left * 25, _top * 31, 25, 31 };
 	tempItem->item = getItemById(_id);
@@ -54,7 +54,7 @@ void ItemOnload()
 	}
 	fclose(file);
 }
-void addItem(Item* _item)
+void addItem(ItemTemplate* _item)
 {
 	_item->pNext = itemBegin;
 	itemBegin = _item;
@@ -72,9 +72,9 @@ ItemData* getItemById(int _id)
 	}
 	return NULL;
 }
-ItemTemplate* getItemByName(char* _name)
+ItemData* getItemByName(char* _name)
 {
-	ItemTemplate* tempItem = itemBegin;
+	ItemData* tempItem = itemBegin;
 	while (tempItem != NULL)
 	{
 		if ((strcmp(_name, tempItem->name)) == 0)
@@ -87,17 +87,17 @@ ItemTemplate* getItemByName(char* _name)
 }
 void updateItem()
 {
-	Item* tempItem = itemBegin;
+	ItemTemplate* tempItem = itemBegin;
 	while (tempItem != NULL)
 	{
-		tempItem->pos.x += 50 * GetDeltaTime();
+		tempItem->pos.x += 50 * getDeltaTime();
 		tempItem = tempItem->pNext;
 	}
 }
 
 void drawItem(sfRenderWindow* _window)
 {
-	Item* tempItem = itemBegin;
+	ItemTemplate* tempItem = itemBegin;
 	while (tempItem != NULL)
 	{
 		sfSprite_setPosition(item, tempItem->pos);
@@ -108,18 +108,18 @@ void drawItem(sfRenderWindow* _window)
 	}
 }
 
-Item* deleteItem(Item* _item)
+ItemTemplate* deleteItem(ItemTemplate* _item)
 {
 	if (_item == itemBegin)
 	{
-		Item* tempItem = _item->pNext;
+		ItemTemplate* tempItem = _item->pNext;
 		itemBegin = tempItem;
 		free(_item);
 		return tempItem;
 	}
 	else
 	{
-		Item* tempItem = itemBegin;
+		ItemTemplate* tempItem = itemBegin;
 		while (tempItem->pNext != _item)
 		{
 			tempItem = tempItem->pNext;

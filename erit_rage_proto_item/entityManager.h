@@ -25,7 +25,7 @@ struct Entity
     };
 };
 
-Entity* firstEntity; *
+Entity* firstEntity; 
 
 
 void initEntity();

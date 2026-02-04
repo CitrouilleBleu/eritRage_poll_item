@@ -21,7 +21,10 @@
     <ClCompile Include="tools.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="item.c">
+    <ClCompile Include="itemManager.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="entityManager.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>
@@ -29,7 +32,10 @@
     <ClInclude Include="tools.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="item.h">
+    <ClInclude Include="itemManager.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="entityManager.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>

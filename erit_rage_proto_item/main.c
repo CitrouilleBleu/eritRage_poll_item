@@ -31,7 +31,7 @@ int main()
             }
 
         }  
-         updateItem();
+        updateItem();
 
         sfRenderWindow_clear(window, sfBlack);
         drawItem(window);

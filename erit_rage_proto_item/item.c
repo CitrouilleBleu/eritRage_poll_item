@@ -12,7 +12,7 @@ void initItem()
 {
 	item = sfSprite_create();
 	spriteSheet = sfTexture_createFromFile("..\\ressoursces\\textures\\items\\spriteSheet_items.png", NULL);
-	sfSprite_setTexture(item, spriteSheet, 1);
+	sfSprite_setTexture(item, spriteSheet, sfTrue);
 }
 
 void ajouteItem(char _name, sfVector2f _itemPos, int _left, int _top)

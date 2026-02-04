@@ -139,12 +139,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="item.c" />
+    <ClCompile Include="entityManager.c" />
+    <ClCompile Include="itemManager.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="tools.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="item.h" />
+    <ClInclude Include="entityManager.h" />
+    <ClInclude Include="itemManager.h" />
     <ClInclude Include="tools.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

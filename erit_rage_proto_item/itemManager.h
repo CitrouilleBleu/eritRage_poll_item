@@ -19,9 +19,10 @@ struct ItemData
 };
 
 typedef struct ItemTemplate ItemTemplate;
-struct ItemTemplate ;
+struct ItemTemplate
 {
-	ItemData item;
+	ItemTemplate* pNext;
+	ItemData* item;
 	sfBool isHold ;
 	sfIntRect iRect;
 	sfVector2f pos;
@@ -30,7 +31,8 @@ struct ItemTemplate ;
 
 };
 
-Item* itemBegin;
+
+ItemData* itemBegin;
 
 
 void initItem();
@@ -39,7 +41,7 @@ void addItem(ItemTemplate* _item);
 sfIntRect seekItem(char _name);
 void updateItem();
 void drawItem(sfRenderWindow* _window);
-Item* deleteItem(ItemTemplate* _item);
+ItemTemplate* deleteItem(ItemTemplate* _item);
 void ItemOnload();
-ItemTemplate* getItemById(int _id);
-ItemTemplate* getItemByName(char* _name);
+ItemData* getItemById(int _id);
+ItemData* getItemByName(char* _name);

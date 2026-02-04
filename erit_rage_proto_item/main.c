@@ -15,13 +15,13 @@ int main()
     initItem();
     ItemOnload();
 	printf("%d\n", getItemById(10)->id);
-  //  printf("%d\n", getItemByName("liasse billets")->id);
-    ajouteItem("liasse billets", (sfVector2f){500,500}, 0, 0);
-    ajouteItem("liasse billets", (sfVector2f){400,400}, 1, 0);
-    ajouteItem("liasse billets", (sfVector2f){100,100}, 2, 2);
-    ajouteItem("liasse billets", (sfVector2f){300,300}, 3, 0);
-    ajouteItem("liasse billets", (sfVector2f){600,600}, 4, 1);
-    ajouteItem("liasse billets", (sfVector2f){700,700}, 5, 0);
+    printf("%d\n", getItemByName("liasseBillets")->id);
+    ajouteItem(2, (sfVector2f){500,500});
+    ajouteItem(5, (sfVector2f){400,400});
+    ajouteItem(3, (sfVector2f){100,100});
+    ajouteItem(6, (sfVector2f){300,300});
+    ajouteItem(40, (sfVector2f){600,600});
+
 
     while (sfRenderWindow_isOpen(window))
     {
@@ -34,7 +34,7 @@ int main()
             }
 
         }  
-         updateItem();
+      //  updateItem();
 
         sfRenderWindow_clear(window, sfBlack);
         drawItem(window);

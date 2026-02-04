@@ -32,11 +32,12 @@ struct ItemTemplate
 };
 
 
-ItemData* itemBegin;
+ItemData* itemDataBegin;
+ItemTemplate* itemBegin;
 
 
 void initItem();
-void ajouteItem(char _name, sfVector2f _itemPos, int _left, int _top);
+void ajouteItem(int _id, sfVector2f _itemPos);
 void addItem(ItemTemplate* _item);
 sfIntRect seekItem(char _name);
 void updateItem();

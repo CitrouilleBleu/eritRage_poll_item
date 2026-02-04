@@ -15,14 +15,18 @@ void initItem()
 	sfSprite_setTexture(item, spriteSheet, sfTrue);
 }
 
-void ajouteItem(int _id, sfVector2f _itemPos, int _left, int _top)
+void ajouteItem(int _id, sfVector2f _itemPos)
 {
 	ItemTemplate* tempItem = (ItemTemplate*)calloc(1, sizeof(ItemTemplate));
 	tempItem->pos = _itemPos;
-	tempItem->iRect = (sfIntRect){ _left * 25, _top * 31, 25, 31 };
 	tempItem->item = getItemById(_id);
-
+	tempItem->iRect = (sfIntRect){ tempItem->item->iRect.left * widthSpriteSheetPart,  tempItem->item->iRect.top * heightSpriteSheetPart, tempItem->item->iRect.width,  tempItem->item->iRect.height };
 	addItem(tempItem);
+}
+void addItemData(ItemData* _itemData)
+{
+	_itemData->pNext = itemDataBegin;
+	itemDataBegin = _itemData;
 }
 void ItemOnload()
 {
@@ -41,15 +45,16 @@ void ItemOnload()
 	fgets(tmpligne, sizeof(tmpligne), file); // Skip header line
 	while (fgets(tmpligne, sizeof(tmpligne), file))
 	{
-		sscanf(tmpligne, "%s,%d,%d,%d,%d,%d,%d", tmpname, &tmprect.left, &tmprect.top, &tmphitbox.x, &tmphitbox.y, &tmpdura, &tmpvalue);
+		sscanf(tmpligne, "%s %d %d %d %d %d %d", tmpname, &tmphitbox.x, &tmphitbox.y, &tmprect.left, &tmprect.top, &tmpdura, &tmpvalue);
 		ItemData* tempItem = (ItemData*)calloc(1, sizeof(ItemData));
 		strcpy(tempItem->name, &tmpname);
 		tempItem->id = tmpid;
 		tempItem->iRect = tmprect;
+
 		tempItem->hitbox = tmphitbox;
 		tempItem->durability = tmpdura;
 		tempItem->rarity = tmpvalue;
-			addItem(tempItem);
+			addItemData(tempItem);
 		tmpid++;
 	}
 	fclose(file);
@@ -59,9 +64,10 @@ void addItem(ItemTemplate* _item)
 	_item->pNext = itemBegin;
 	itemBegin = _item;
 }
+
 ItemData* getItemById(int _id)
 {
-	ItemData* tempItem = itemBegin;
+	ItemData* tempItem = itemDataBegin;
 	while (tempItem != NULL)
 	{
 		if (_id == tempItem->id)
@@ -74,7 +80,7 @@ ItemData* getItemById(int _id)
 }
 ItemData* getItemByName(char* _name)
 {
-	ItemData* tempItem = itemBegin;
+	ItemData* tempItem = itemDataBegin;
 	while (tempItem != NULL)
 	{
 		if ((strcmp(_name, tempItem->name)) == 0)
@@ -100,6 +106,7 @@ void drawItem(sfRenderWindow* _window)
 	ItemTemplate* tempItem = itemBegin;
 	while (tempItem != NULL)
 	{
+
 		sfSprite_setPosition(item, tempItem->pos);
 		sfSprite_setTextureRect(item, tempItem->iRect);
 		sfRenderWindow_drawSprite(_window, item, NULL);

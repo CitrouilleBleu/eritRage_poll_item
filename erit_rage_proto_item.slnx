@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="erit_rage_proto_item/erit_rage_proto_item.vcxproj" Id="2109272c-5aa7-4a31-bded-d3a5392865bf" />
+</Solution>

@@ -12,7 +12,9 @@ int main()
     sfEvent events;
     initTools();
     initItem();
-
+    ItemOnload();
+	printf("%s\n", getItemById(40)->name);
+ //   printf("%d\n", getItemByName("liasse billets")->id);
     ajouteItem("liasse billets", (sfVector2f){500,500}, 0, 0);
     ajouteItem("liasse billets", (sfVector2f){400,400}, 1, 0);
     ajouteItem("liasse billets", (sfVector2f){100,100}, 2, 2);

@@ -15,22 +15,76 @@ void initItem()
 	sfSprite_setTexture(item, spriteSheet, 1);
 }
 
-void ajouteItem(char _name, sfVector2f _itemPos, int _left, int _top)
+void ajouteItem(int _id, sfVector2f _itemPos, int _left, int _top)
 {
 	Item* tempItem = (Item*)calloc(1, sizeof(Item));
 	tempItem->pos = _itemPos;
 	tempItem->iRect = (sfIntRect){ _left * 25, _top * 31, 25, 31 };
-	tempItem->name = _name;
+	tempItem->item = getItemById(_id);
 
 	addItem(tempItem);
 }
+void ItemOnload()
+{
+	
+	char tmpligne[200];
+	char tmpname[40];
+	sfIntRect tmprect;
+	 tmprect.height = heightSpriteSheetPart;
+	 tmprect.width = widthSpriteSheetPart;
+	sfVector2f tmphitbox;
+	int tmpdura;
+	int tmpvalue;
+	int tmpid = 1;
 
+	FILE* file = fopen("data2.tsv", "r");
+	fgets(tmpligne, sizeof(tmpligne), file); // Skip header line
+	while (fgets(tmpligne, sizeof(tmpligne), file))
+	{
+		sscanf(tmpligne, "%s,%d,%d,%d,%d,%d,%d", tmpname, &tmprect.left, &tmprect.top, &tmphitbox.x, &tmphitbox.y, &tmpdura, &tmpvalue);
+		ItemTemplate* tempItem = (ItemTemplate*)calloc(1, sizeof(ItemTemplate));
+		strcpy(tempItem->name, &tmpname);
+		tempItem->id = tmpid;
+		tempItem->iRect = tmprect;
+		tempItem->hitbox = tmphitbox;
+		tempItem->durability = tmpdura;
+		tempItem->rarity = tmpvalue;
+			addItem(tempItem);
+		tmpid++;
+	}
+	fclose(file);
+}
 void addItem(Item* _item)
 {
 	_item->pNext = itemBegin;
 	itemBegin = _item;
 }
-
+ItemTemplate* getItemById(int _id)
+{
+	ItemTemplate* tempItem = itemBegin;
+	while (tempItem != NULL)
+	{
+		if (_id == tempItem->id)
+		{
+			return tempItem;
+		}
+		tempItem = tempItem->pNext;
+	}
+	return NULL;
+}
+ItemTemplate* getItemByName(char* _name)
+{
+	ItemTemplate* tempItem = itemBegin;
+	while (tempItem != NULL)
+	{
+		if ((strcmp(_name, tempItem->name)) == 0)
+		{
+			return tempItem;
+		}
+		tempItem = tempItem->pNext;
+	}
+	return NULL;
+}
 void updateItem()
 {
 	Item* tempItem = itemBegin;
